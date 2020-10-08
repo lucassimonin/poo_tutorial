@@ -7,9 +7,9 @@ require __DIR__ . '/vendor/autoload.php';
 use Dnd\Entity\{Character, Warrior, Wizard};
 
 /** @var Warrior $warrior */
-$warrior = new Warrior(15, 'Montpellier', 10, 'Warrior', 60);
+$warrior = new Warrior(15, 'Warrior', 60);
 /** @var Wizard $wizard */
-$wizard = new Wizard(6, 'Paris', 30, 'Wizard', 45);
+$wizard = new Wizard(6, 'Wizard', 45);
 
 /** @var Character[] $fight */
 $fight = [$wizard, $warrior];
