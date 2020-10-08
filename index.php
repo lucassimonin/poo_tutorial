@@ -6,6 +6,9 @@ require __DIR__ . '/vendor/autoload.php';
 
 use Dnd\Entity\Character;
 
-/** @var Character $personnage */
-$character = new Character();
-$character->speak();
+/** @var Character $characterDupont */
+$characterDupont = new Character(12, 'Montpellier', 10, 'Dupont');
+$characterDupont->speak();
+/** @var Character $characterHenri */
+$characterHenri = new Character(15, 'Paris', 30, 'Henri');
+$characterHenri->speak();

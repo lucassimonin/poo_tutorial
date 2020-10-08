@@ -39,6 +39,32 @@ class Character
      * @var int $damage
      */
     private $damage;
+    /**
+     * Description $name field
+     *
+     * @var string $name
+     */
+    private $name;
+
+    /**
+     * Character constructor
+     *
+     * @param int    $strength
+     * @param string $location
+     * @param int    $experience
+     * @param string $name
+     */
+    public function __construct(
+        int $strength,
+        string $location,
+        int $experience,
+        string $name
+    ) {
+        $this->strength   = $strength;
+        $this->location   = $location;
+        $this->experience = $experience;
+        $this->name       = $name;
+    }
 
     /**
      * Nous déclarons une méthode dont le seul but est d'afficher un texte.
@@ -47,6 +73,6 @@ class Character
      */
     public function speak(): void
     {
-        echo 'Je suis un personnage !';
+        echo sprintf("Je m’appelle %s et j’habite à %s, j’ai une force de %s et %s d’XP.", $this->name, $this->location, $this->strength, $this->experience);
     }
 }
