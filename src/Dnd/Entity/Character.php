@@ -22,18 +22,6 @@ class Character
      */
     private $strength;
     /**
-     * Description $location field
-     *
-     * @var string $location
-     */
-    private $location;
-    /**
-     * Description $experience field
-     *
-     * @var int $experience
-     */
-    private $experience;
-    /**
      * Description $damage field
      *
      * @var int $damage
@@ -50,19 +38,13 @@ class Character
      * Character constructor
      *
      * @param int    $strength
-     * @param string $location
-     * @param int    $experience
      * @param string $name
      */
     public function __construct(
         int $strength,
-        string $location,
-        int $experience,
         string $name
     ) {
         $this->strength   = $strength;
-        $this->location   = $location;
-        $this->experience = $experience;
         $this->name       = $name;
     }
 
@@ -73,6 +55,6 @@ class Character
      */
     public function speak(): void
     {
-        echo sprintf("Je m’appelle %s et j’habite à %s, j’ai une force de %s et %s d’XP.", $this->name, $this->location, $this->strength, $this->experience);
+        echo sprintf("Je m’appelle %s et j’ai une force de %s.", $this->name, $this->strength);
     }
 }
