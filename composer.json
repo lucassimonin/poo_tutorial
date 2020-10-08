@@ -1,0 +1,15 @@
+{
+    "name": "luk/poo_tutorial",
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Lucas Simonin",
+            "email": "luk@dnd.fr"
+        }
+    ],
+    "require": {}
+}
