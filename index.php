@@ -4,11 +4,32 @@ declare(strict_types=1);
 
 require __DIR__ . '/vendor/autoload.php';
 
-use Dnd\Entity\Character;
+use Dnd\Entity\{Character, Warrior, Wizard};
 
-/** @var Character $characterDupont */
-$characterDupont = new Character(12, 'Montpellier', 10, 'Dupont');
-$characterDupont->speak();
-/** @var Character $characterHenri */
-$characterHenri = new Character(15, 'Paris', 30, 'Henri');
-$characterHenri->speak();
+/** @var Warrior $warrior */
+$warrior = new Warrior(15, 'Montpellier', 10, 'Warrior', 60);
+/** @var Wizard $wizard */
+$wizard = new Wizard(6, 'Paris', 30, 'Wizard', 45);
+
+/** @var Character[] $fight */
+$fight = [$wizard, $warrior];
+
+do {
+    shuffle($fight);
+    /** @var Character $characterOne */
+    $characterOne = $fight[0];
+    /** @var Character $characterTwo */
+    $characterTwo = $fight[1];
+    $characterOne->attack($characterTwo);
+    echo sprintf('PV de %s: %s/%s<br>', $characterTwo->getName(), $characterTwo->getDamage(), $characterTwo->getLifePoint());
+} while (!$warrior->isDead() && !$wizard->isDead());
+
+if ($warrior->isDead()) {
+    echo 'Warrior is dead !';
+    exit;
+}
+
+if ($wizard->isDead()) {
+    echo 'Wizard is dead !';
+    exit;
+}
